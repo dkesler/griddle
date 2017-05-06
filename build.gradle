@@ -2,9 +2,10 @@ apply plugin: 'groovy'
 apply plugin: 'idea'
 apply plugin: 'eclipse'
 apply plugin: 'maven'
+apply plugin: 'java-gradle-plugin'
 
 
-sourceCompatibility = 1.6
+sourceCompatibility = 1.8
 version = '1.9'
 group = 'com.yodle.griddle'
 jar.baseName = 'griddle'
@@ -16,12 +17,15 @@ repositories {
 dependencies {
   compile gradleApi()
   compile localGroovy()
-  testCompile "junit:junit:4.11"
-  testCompile 'org.spockframework:spock-core:0.7-groovy-1.8'
+  testCompile 'junit:junit:4.11'
+//  testCompile gradleTestKit()
+  testCompile ('org.spockframework:spock-core:1.0-groovy-2.4') {
+    exclude module: 'groovy-all'
+  }
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '1.11'
+    gradleVersion = '3.5'
 }
 
 if (hasProperty('publishing'))
