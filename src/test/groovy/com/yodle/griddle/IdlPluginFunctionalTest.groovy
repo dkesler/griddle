@@ -16,7 +16,7 @@ class IdlPluginFunctionalTest extends Specification {
         buildFile = testProjectDir.newFile('build.gradle')
     }
 
-    def ""() {
+    def "test idl jar"() {
         given:
           buildFile << """
 plugins {

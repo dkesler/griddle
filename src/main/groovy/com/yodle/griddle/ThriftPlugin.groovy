@@ -40,7 +40,7 @@ class ThriftPlugin extends GeneratingPlugin {
         t.dependencyFiles = project.fileTree((Object){project.dependencyIdlDir})
         t.includedFiles = project.fileTree((Object){project.includedIdlDir})
         t.outputDirs = project.files((Object){project.thriftGenDir})
-        t.setLanguage('java:hashcode')
+        t.setLanguage('java')
       }
     })
 
