@@ -48,14 +48,6 @@ This option indicates the directory containing the source thrift files for the p
 
 This option indicates the directory that generators should generate real source files into.  It defaults to "build/gen-src".
 
-#### dependencyIdlDir
-
-This option indicates a staging directory for all thrift files provided by `idl` dependencies.  I.e. thrift files that must be generated.  Defaults to "build/idl/dependency"
-
-#### includedIdlDir
-
-This option indicates a staging directory for all thrift files provided by `compiledIdl` dependencies.  I.e. thrift files that may be included by other thrift files but should not themselves be genrated.  Defaults to "build/idl/included"
-
 ## The Thrift Plugin
 
 In addition to applying the `idl` plugin, the `thrift` plugin adds the capability to generate thrift files using the standard Apache Thrift generator in any language supported by that generator.  It will also integrate the interface generation process into the Java build process.
